@@ -32,6 +32,7 @@ end
 group :development do
   gem 'better_errors'
   gem 'binding_of_caller'
+  gem 'heroku-api'
 end
 
 group :production do
