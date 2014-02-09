@@ -13,5 +13,7 @@ Diffux::Application.routes.draw do
     end
   end
 
+  get 'heroku_status/queue'
+
   root to: 'projects#index'
 end
