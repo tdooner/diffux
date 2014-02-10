@@ -75,6 +75,22 @@ workers. To start a worker, run:
 bundle exec sidekiq
 ```
 
+## Configuring OAuth login
+In order to get login working with Google, you need to get an OAuth Client and
+Secret key from Google. To do this:
+
+1. Go to https://code.google.com/apis/console/
+2. Create a new project
+3. Go to "Credentials" under "APIs & Auth"
+4. Click "Create New Client ID"
+  * Set the "Authorized Javascript Origin" to your URL
+  * Set "Authorized Redirect URI" to "https://[site]/auth/google_oauth2/callback"
+
+These must be set to **GOOGLE_CLIENT_ID**, and **GOOGLE_CLIENT_SECRET**
+environment variables. A good way to do this is put them as [key]=[value] pairs
+in the `.env` file in this directory, and then use `foreman start` to start the
+server and worker.
+
 ## Running Diffux on Heroku
 
 Diffux can run on Heroku. In order to do this, you will need an Amazon Web

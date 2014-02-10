@@ -7,6 +7,8 @@ gem 'chunky_png'
 gem 'haml-rails'
 gem 'jquery-rails'
 gem 'oily_png' # speeds up chunky_png
+gem 'omniauth'
+gem 'omniauth-google-oauth2'
 gem 'paperclip'
 gem 'pg'
 gem 'phantomjs'

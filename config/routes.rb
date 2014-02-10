@@ -13,5 +13,7 @@ Diffux::Application.routes.draw do
     end
   end
 
+  get 'auth/google_oauth2/callback', to: 'user_auth_callbacks#google_oauth2'
+
   root to: 'projects#index'
 end
