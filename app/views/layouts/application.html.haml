@@ -10,10 +10,19 @@
   = csrf_meta_tags
 %body
   %nav.navbar.navbar-default{ role: 'navigation' }
-    %ul.nav.navbar-nav
-      %li= link_to 'Diffux', root_path, class: 'brand'
-      %li= link_to 'Projects', projects_path
-      %li= link_to 'About', static_pages_about_path
+    .container
+      %ul.nav.navbar-nav
+        %li= link_to 'Diffux', root_path, class: 'navbar-brand'
+        %li= link_to 'Projects', projects_path
+        %li= link_to 'About', static_pages_about_path
+      %ul.nav.navbar-nav.navbar-right
+        - if current_user.nil?
+          %li= link_to 'Login', google_oauth2_path
+        - else
+          %li
+            = image_tag current_user.image_url, class: 'navbar-user-image'
+          %li
+            = link_to current_user.name, '#'
 
   .container
     - if notice
