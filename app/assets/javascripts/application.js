@@ -15,5 +15,6 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require replacejs/replace
+//= require bootstrap/dropdown
 //= require _loading-indicator
 //= require _snapshot-review-navigator

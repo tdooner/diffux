@@ -13,6 +13,12 @@ Diffux::Application.routes.draw do
     end
   end
 
+  resources :sessions, only: [] do
+    collection do
+      delete :logout
+    end
+  end
+
   # n.b.: this route is for the helper only, as any request to it is intercepted
   # by Omniauth middleware before Rails gets it:
   get 'auth/google_oauth2', as: :google_oauth2

@@ -22,7 +22,11 @@
           %li
             = image_tag current_user.image_url, class: 'navbar-user-image'
           %li
-            = link_to current_user.name, '#'
+            = link_to '#', data: { toggle: 'dropdown' } do
+              = current_user.name
+              %b.caret
+            %ul.dropdown-menu
+              %li= link_to 'Logout', logout_sessions_path, data: { method: 'delete' }
 
   .container
     - if notice
