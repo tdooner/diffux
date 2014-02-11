@@ -1,7 +1,7 @@
 class UserAuthCallbacksController < ApplicationController
   def google_oauth2
-    auth_data   = request.env['omniauth.auth']
-    info        = auth_data['info']
+    auth_data = request.env['omniauth.auth']
+    info      = auth_data['info']
 
     user = User.where(google_uid: auth_data['uid']).first_or_create
 

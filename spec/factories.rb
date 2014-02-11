@@ -68,4 +68,11 @@ FactoryGirl.define do
       image nil
     end
   end
+
+  factory :user do
+    google_uid Random.rand(100_000_000_000_000).to_s
+    name       ('a'..'z').to_a.sample(15).join
+    email      ('a'..'z').to_a.sample(15).join
+    image_url  { 'http://image.url/' + google_uid }
+  end
 end
